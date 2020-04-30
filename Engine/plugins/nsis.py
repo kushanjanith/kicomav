@@ -609,7 +609,7 @@ class KavMain:
                     fmd5 = cryptolib.md5(buf).decode('hex')  # 파일 전체 MD5 생성
                     header = 'NSIS' + struct.pack('<L', malware_id) + fmd5
 
-                    rname = tempfile.mktemp(prefix='ktmp')
+                    rname = tempfile.mkstemp(suffix=None, prefix='ktmp', dir=None, text=False)
                     open(rname, 'wb').write(mm[foff:])
 
                     max_len = 0
