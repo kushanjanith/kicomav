@@ -530,7 +530,7 @@ def download_file_k2(url, filename, path, gz=False, fnhook=None):
 
     if gz:
         data = gzip.open(pwd, 'rb').read()
-        fname = tempfile.mktemp(prefix='ktmp') + '.exe'
+        fname = tempfile.mkstemp(suffix=None, prefix='ktmp', dir=None, text=False) + '.exe
         open(fname, 'wb').write(data)
         os.remove(pwd)  # gz 파일은 삭제한다.
 
