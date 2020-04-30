@@ -8,7 +8,7 @@
 import cgi
 import HTMLParser
 import csv
-import xml.etree.cElementTree as ET
+from defusedxml.cElementTree import parse as ET
 import json
 import email
 
